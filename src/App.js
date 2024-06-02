@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Diary from './components/Diary/Diary';
+import { Route, Routes } from "react-router-dom";
+import ShopConteiner from './components/ShopConteiner/ShopConteiner'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      <h1>PRIMER DEPLOY EN GITHUB</h1>
-      <h2>TODAVIA NO ENTIENDO COMO DA LA VUELAAAAAAAAAA</h2>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+      <Route 
+       exact  
+          path="/pruebasubidadepaginagithubpage/listacompras"
+          element={<ShopConteiner />}
+        /> 
+      <Route 
+          exact 
+          path="/pruebasubidadepaginagithubpage/"
+          element={<Diary />}
+        /> 
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
